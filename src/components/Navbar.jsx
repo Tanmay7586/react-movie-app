@@ -7,7 +7,6 @@ export default function Navbar() {
   const location = useLocation();
 
   useEffect(() => {
-    // clear input on route change
     setQ("");
   }, [location.pathname]);
 
@@ -22,14 +21,12 @@ export default function Navbar() {
   return (
     <nav className="bg-gray-900 border-b border-gray-800 sticky top-0 z-50">
       <div className="max-w-6xl mx-auto px-4 py-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-        {/* Top row: logo */}
         <div className="flex justify-between items-center">
           <Link to="/" className="text-xl font-bold">
             MovieApp
           </Link>
         </div>
 
-        {/* Middle row: nav links */}
         <div className="flex flex-wrap gap-2">
           <Link className={linkBase} to="/">
             Popular
@@ -42,7 +39,6 @@ export default function Navbar() {
           </Link>
         </div>
 
-        {/* Bottom row: search */}
         <form
           onSubmit={onSubmit}
           className="flex items-center gap-2 w-full sm:w-auto"
